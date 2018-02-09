@@ -1,0 +1,78 @@
+<core:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:f="sap.ui.layout.form"
+		controllerName="zproductcrud.Product" xmlns:html="http://www.w3.org/1999/xhtml">
+	<Page title="Title">
+		<content>
+	         <Table items="{/ProductSet}" growingThreshold="5" growing="true" id="idTable"
+	         mode="SingleSelectLeft" selectionChange="onselectionChange"
+	         >
+	            <headerToolbar>
+	               <Toolbar>
+	                   <content>
+	                      <SearchField showRefreshButton="true" placeholder="Search for Products" search="onSearch"/>
+	                   </content>
+	               </Toolbar>
+	            </headerToolbar>
+	            <columns>
+	               <Column>
+	                  <Text text="Name"/>
+	               </Column>
+	                <Column>
+	                  <Text text="Product ID"/>
+	               </Column>
+	                <Column>
+	                  <Text text="Category"/>
+	               </Column>	               
+	            </columns>
+	            <items>
+	               <ColumnListItem>
+	                  <cells>
+	                     <Text text="{Name}"/>
+	                     <Text text="{ProductID}"/>
+	                     <Text text="{Category}"/>
+	                  </cells>
+	               </ColumnListItem>
+	            </items>
+	         </Table>
+	         
+	         	<VBox class="sapUiSmallMargin">
+				<f:SimpleForm id="SimpleFormDisplay354" visible="false"
+					editable="false"
+					layout="ResponsiveGridLayout"
+					title="Product Details"
+					labelSpanXL="3"
+					labelSpanL="3"
+					labelSpanM="3"
+					labelSpanS="12"
+					adjustLabelSpan="false"
+					emptySpanXL="4"
+					emptySpanL="4"
+					emptySpanM="4"
+					emptySpanS="0"
+					columnsXL="1"
+					columnsL="1"
+					columnsM="1"
+					singleContainerFullSize="false" >
+					<f:content>
+						<Label text="Name" />
+						<Text text="{Name}"/>
+						<Label text="Product ID"/>
+						<Text text="{ProductID}" />
+						<Label text="Category" />
+						<Text text="{Category}" />
+						<Label text="Description" />
+						<Text text="{Description}"/>
+					</f:content>
+				</f:SimpleForm>
+			</VBox>
+	         
+		</content>
+        <footer>
+           <Bar>
+             <contentRight>
+                 <Button text="Create" press="onCreate"/>
+                 <Button text="Update" press="onUpdate"/>
+             </contentRight>
+           </Bar>
+        </footer>
+	</Page>
+</core:View>
